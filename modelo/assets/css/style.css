@@ -48,7 +48,7 @@ form input:focus {
 form button {
     border: none;
     background: var(--primary-color);
-    color: wheat;
+    color: rgb(255, 255, 255);
     font-size: 18px;
     font-weight: 700;
     height: 3rem;
@@ -67,4 +67,11 @@ form button:hover {
 
 form button:active {
     background: var(--primary-color-buttonClick);
+}
+
+#resultado {
+    background: var(--primary-color);
+    padding: 10px 20px;
+    height: 3rem;
+    color: var(--primary-color-dark);
 }
