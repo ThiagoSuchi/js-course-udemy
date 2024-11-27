@@ -1,3 +1,4 @@
+// capturando o evento de submit do formulário
 const calcular = document.getElementById('Calcule');
 
 function calculoIMC(event) {
@@ -40,7 +41,7 @@ function classificarPeso(valorIMC) {
     default:
         classificacao = 'obesidade grau III';
     }    
-    
+
     resultado.textContent = `Seu IMC é - ${valorIMC.toFixed(1)} (${classificacao})`
 }
 
