@@ -1,48 +1,83 @@
-// capturando o evento de submit do formulário
-const calcular = document.getElementById('Calcule');
+const form = document.querySelector("#form");
 
-function calculoIMC(event) {
-    event.preventDefault();
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const inputPeso = event.target.querySelector("#Peso");
+  const inputAltura = event.target.querySelector("#Altura");
 
-    const peso = document.getElementById('Peso').value;
-    const altura = document.getElementById('Altura').value;
-    const resultado = document.getElementById('resultado');
-    let valorIMC;
+  const peso = Number(inputPeso.value);
+  const altura = Number(inputAltura.value);
 
-    if(peso !== '' && altura !== ''){
-        let pesoNumber = Number(peso)
-        let alturaNumber = Number(altura)
-        valorIMC = (pesoNumber / ((alturaNumber/100) ** 2))
-    } else {
-        resultado.textContent = 'Preencha todos os campos!'
-    }
-    classificarPeso(valorIMC)
-}
+  // Verificando se peso e altura são válidos.
+  if (!peso) {
+    setResultado("Peso inválido!", false);
+    return;
+  }
 
-function classificarPeso(valorIMC) {
-    let classificacao = ''
-    
+  if (!altura) {
+    setResultado("Altura inválida!", false);
+    return;
+  }
+
+  const imc = calculoImc(peso, altura);
+  setResultado(imc);
+  classificarImc(imc)
+});
+
+// Classificando a pessoa pelo seu IMC
+function classificarImc(imc) {
+    const nivel = [
+        'Abaixo do peso', 
+        'Peso normal', 
+        'Sobrepeso', 
+        'Obesidade grau 1', 
+        'Obesidade grau 2', 
+        'Obesidade grau 3'
+    ]
+    let categoria = [];
+
     switch (true) {
-        case (valorIMC < 18.5):
-            classificacao = 'abaixo do peso';
+        case imc < 18.5:
+            categoria.push(nivel[0]);
             break;
-        case (valorIMC < 25):
-            classificacao = 'peso ideal';
+        case imc >= 18.5:
+            categoria.push(nivel[1]);
             break;
-        case (valorIMC < 30):
-            classificacao = 'acima do peso';
+        case imc >= 25:
+            categoria.push(nivel[2]);
             break;
-        case (valorIMC < 35):
-            classificacao = 'obesidade grau I';
+        case imc >= 30:
+            categoria.push(nivel[3]);
             break;
-        case (valorIMC < 40):
-            classificacao = 'obesidade grau II';
+        case imc >= 35:
+            categoria.push(nivel[4]);
             break;
-    default:
-        classificacao = 'obesidade grau III';
-    }    
-
-    resultado.textContent = `Seu IMC é - ${valorIMC.toFixed(1)} (${classificacao})`
+        case imc >= 40:
+            categoria.push(nivel[5]);
+            break;
+        default:
+            categoria = 'Risco de vida, obesidade grave!'; 
+    }
 }
 
-calcular.addEventListener('click', calculoIMC)
+// Calculando IMC.
+function calculoImc(peso, altura) {
+    const calculo = peso / (altura ** 2);
+    return calculo.toFixed(2)
+}
+
+// Criando um paragrafo.
+function criarParagrafo() {
+  const p = document.createElement("p");
+  return p;
+}
+
+// Inserindo em resultado o calculo IMC.
+function setResultado(msg, isValid) {
+  const result = document.getElementById("resultado");
+  result.innerHTML = "";
+
+  const p = criarParagrafo();
+  p.innerHTML = msg;
+  result.appendChild(p);
+}
