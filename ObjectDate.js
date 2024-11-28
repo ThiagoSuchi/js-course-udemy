@@ -22,7 +22,15 @@ console.log(data2.toString());
 console.log('--------------------------------------------------------------');
 
 //-----dataString------------------------------------------------------------------------------------
-const data3 = new Date('2024-11-28 11:24:56');
+const data3 = new Date('2024-11-28 15:24:56');
 console.log(data3);
 console.log(data3.toString());
+console.log('Dia', data3.getDate());
+console.log('Mês', data3.getMonth() + 1);
+console.log('Ano', data3.getFullYear());
+console.log('Hora', data3.getHours());
+console.log('Minuto', data3.getMinutes());
+console.log('Segundo', data3.getSeconds());
+console.log('Milessegundo', data3.getMilliseconds());
+
 
