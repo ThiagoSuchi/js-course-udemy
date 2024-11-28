@@ -1,5 +1,5 @@
 :root {
-    --primary-color: rgb(202, 159, 77);
+    --primary-color: rgb(209, 180, 125);
     --primary-color-dark: rgb(82, 61, 24);
     --primary-color-buttonClick: rgb(133, 122, 103);
 }
@@ -69,9 +69,16 @@ form button:active {
     background: var(--primary-color-buttonClick);
 }
 
-.result{
+.result, .invalid{
     background: var(--primary-color);
-    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
     height: 3rem;
     color: var(--primary-color-dark);
+}
+
+.invalid {
+    color: rgb(27, 21, 21);
+    background: rgb(252, 147, 147);
 }

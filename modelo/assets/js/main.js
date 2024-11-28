@@ -9,61 +9,69 @@ form.addEventListener("submit", function (event) {
   const altura = Number(inputAltura.value);
 
   // Verificando se peso e altura são válidos.
+  if (!peso && !altura) {
+    setResultado("Peso e Altura inválidos!", false);
+    return;
+  }
   if (!peso) {
     setResultado("Peso inválido!", false);
     return;
   }
-
   if (!altura) {
     setResultado("Altura inválida!", false);
     return;
   }
 
   const imc = calculoImc(peso, altura);
-  setResultado(imc);
-  classificarImc(imc)
+  const nivelIMC = classificarImc(imc)
+  
+  const msg = `Seu IMC --> ${imc} <-- (${nivelIMC})`;
+  setResultado(msg, true)
+
 });
 
 // Classificando a pessoa pelo seu IMC
 function classificarImc(imc) {
-    const nivel = [
-        'Abaixo do peso', 
-        'Peso normal', 
-        'Sobrepeso', 
-        'Obesidade grau 1', 
-        'Obesidade grau 2', 
-        'Obesidade grau 3'
-    ]
-    let categoria = [];
+  const nivel = [
+    "Abaixo do peso",
+    "Peso normal",
+    "Sobrepeso",
+    "Obesidade grau 1",
+    "Obesidade grau 2",
+    "Obesidade grau 3",
+  ];
+  let categoria = '';
 
-    switch (true) {
-        case imc < 18.5:
-            categoria.push(nivel[0]);
-            break;
-        case imc >= 18.5:
-            categoria.push(nivel[1]);
-            break;
-        case imc >= 25:
-            categoria.push(nivel[2]);
-            break;
-        case imc >= 30:
-            categoria.push(nivel[3]);
-            break;
-        case imc >= 35:
-            categoria.push(nivel[4]);
-            break;
-        case imc >= 40:
-            categoria.push(nivel[5]);
-            break;
-        default:
-            categoria = 'Risco de vida, obesidade grave!'; 
-    }
+  switch (true) {
+    case imc >= 40:
+      categoria = nivel[5];
+      break;
+    case imc >= 35:
+      categoria = nivel[4];
+      break;
+    case imc >= 30:
+      categoria = nivel[3];
+      break;
+    case imc >= 25:
+      categoria = nivel[2];
+      break;
+    case imc >= 18.5:
+      categoria = nivel[1];
+      break;
+    case imc < 18.5:
+      categoria = nivel[0];
+      break;
+    default:
+      categoria = "Erro - Valor inválido!";
+  }
+  
+  return categoria;
 }
 
 // Calculando IMC.
 function calculoImc(peso, altura) {
-    const calculo = peso / (altura ** 2);
-    return calculo.toFixed(2)
+  const calculo = peso / altura ** 2;
+  return calculo.toFixed(2);
 }
 
 // Criando um paragrafo.
@@ -74,10 +82,19 @@ function criarParagrafo() {
 
 // Inserindo em resultado o calculo IMC.
 function setResultado(msg, isValid) {
-  const result = document.getElementById("resultado");
-  result.innerHTML = "";
+  const result = document.querySelector("#resultado");
+  result.innerHTML = '';
 
   const p = criarParagrafo();
+
+  if(isValid) {
+    console.log('Tem nenhum problema com a condição');
+    p.classList.add('result');
+  } else {
+    console.log('AQUI');
+    p.classList.add('invalid')
+  }
+
   p.innerHTML = msg;
   result.appendChild(p);
 }
