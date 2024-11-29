@@ -1,3 +1,7 @@
+function zeroEsquerda (data) {
+  return data >= 10 ? data : `0${data}`
+}
+
 function formatDate(data) {
   const dia = data.getDay();
   const mes = data.getMonth();
@@ -40,7 +44,7 @@ function formatDate(data) {
       break;
   }
 
-  return `${diaSemanaTexto}, ${dia} de ${diaMes[index]} de ${ano} ${hora}:${min}`
+  return `${diaSemanaTexto}, ${dia} de ${diaMes[index]} de ${ano} ${zeroEsquerda(hora)}:${zeroEsquerda(min)}`
 }
 
 function getDateFormated() {
