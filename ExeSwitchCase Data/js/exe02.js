@@ -43,10 +43,10 @@ function formatDate(data) {
   return `${diaSemanaTexto}, ${dia} de ${diaMes[index]} de ${ano} ${hora}:${min}`
 }
 
-function imprimirH1() {
+function getDateFormated() {
   const date = document.getElementById("data");
   const dataAtual = formatDate(new Date());
   date.innerHTML = dataAtual;
 }
 
-imprimirH1()
+getDateFormated()
