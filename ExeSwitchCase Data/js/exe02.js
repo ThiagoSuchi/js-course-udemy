@@ -44,7 +44,7 @@ function formatDate(data) {
       break;
   }
 
-  return `${diaSemanaTexto}, ${dia} de ${diaMes[index]} de ${ano} ${zeroEsquerda(hora)}:${zeroEsquerda(min)}`
+  return `${diaSemanaTexto}, ${dia} de ${diaMes[index]} de ${ano} ás ${zeroEsquerda(hora)}:${zeroEsquerda(min)}`
 }
 
 function getDateFormated() {
@@ -54,3 +54,9 @@ function getDateFormated() {
 }
 
 getDateFormated()
+
+// Ou da maneira mais pratica e perfomatica(INDICADA)
+
+const h1 = document.querySelector('#data');
+const dataAtual = new Date();
+h1.innerHTML = dataAtual.toLocaleString('pt-BR', {dateStyle: 'full', timeStyle: 'short'});
