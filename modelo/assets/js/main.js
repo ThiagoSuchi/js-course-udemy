@@ -88,10 +88,8 @@ function setResultado(msg, isValid) {
   const p = criarParagrafo();
 
   if(isValid) {
-    console.log('Tem nenhum problema com a condição');
     p.classList.add('result');
   } else {
-    console.log('AQUI');
     p.classList.add('invalid')
   }
 
