@@ -4,7 +4,7 @@
   "main": "CurtoCircuito.js",
   "scripts": {
     "dev": "node CurtoCircuito.js",
-    "start": "nodemon ./Data/DestructAtribuition.js",
+    "start": "nodemon ./Data/DestructObject.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

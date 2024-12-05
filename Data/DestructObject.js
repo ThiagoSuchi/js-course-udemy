@@ -8,6 +8,12 @@ const pessoa = {
         numero: '524B'
     }
 };
+
+// Atribuição via desestruturação com endereço
+const { endereco: {rua, numero} } = pessoa;
+console.log(rua, numero);
+
+
 // Se um dos elementos não existir passe uma condição para não ser imprimido undefined, no exmplo abaixo a condição é { nome = '' }
-const { nome = '', sobrenome, idade } = pessoa
-console.log(nome, sobrenome, idade);
+const { nome: n = '', sobrenome: s = '', idade: i = '' } = pessoa
+console.log(n, s, i);
