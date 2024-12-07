@@ -2,10 +2,10 @@
 const section = document.querySelector('.container')
 
 const elementos = [
-    {tag: 'p', texto: 'Olá, senhoras e senhores.'},
-    {tag: 'div', texto: 'Como vocês  estão?'},
-    {tag: 'footer', texto: 'Hoje é um grande dia!'},
-    {tag: 'section', texto: 'Dia de jogar um volei!'}
+    {tag: 'h3', texto: 'Olá, senhoras e senhores.'},
+    {tag: 'h3', texto: 'Como vocês  estão?'},
+    {tag: 'p', texto: 'Hoje é um grande dia!'},
+    {tag: 'p', texto: 'Dia de jogar um volei!'}
 ];
 
 function createElement(element, text) {
