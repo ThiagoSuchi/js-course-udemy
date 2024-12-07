@@ -4,10 +4,15 @@ const pessoa = {
     sobrenome: 'Henrique Oliveira',
     idade: 35,
     endereco: {
-        rua: 'Av Gaibrin',
+        rua: 'Av Graibin',
         numero: '524B'
     }
 };
+
+// Atribuição via desestruturação com rest operator
+const {nome, sobrenome, ...resto} = pessoa
+console.log(nome, resto);
+
 
 // Atribuição via desestruturação com endereço
 const { endereco: {rua, numero} } = pessoa;
