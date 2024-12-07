@@ -8,16 +8,16 @@ const elementos = [
     {tag: 'p', texto: 'Dia de jogar um volei!'}
 ];
 
-function createElement(element, text) {
-    const elementHTML = document.createElement(element)
-    elementHTML.innerHTML = text
-    return elementHTML
-}
+// function createElement(element, text) {
+//     const elementHTML = document.createElement(element)
+//     elementHTML.innerHTML = text
+//     return elementHTML
+// }
 
-for (let i = 0; i < elementos.length; i++) {
-    const {tag, texto} = elementos[i]
-    section.appendChild(createElement(tag, texto))
-}
+// for (let i = 0; i < elementos.length; i++) {
+//     const {tag, texto} = elementos[i]
+//     section.appendChild(createElement(tag, texto))
+// }
 
 
 // De outras maneiras
@@ -30,5 +30,3 @@ for(let i = 0; i < elementos.length; i++) {
     tagCriada.innerText = texto;
     div.appendChild(tagCriada);
 }
-
-section.appendChild(div);
