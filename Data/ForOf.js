@@ -23,3 +23,4 @@ for (const [id, nome] of usuarios) {
   console.log(`ID: ${id}, Nome: ${nome}`);
 }
 
+// OBS - Retorna o valor em si(iteráveis, arrays, strings)
