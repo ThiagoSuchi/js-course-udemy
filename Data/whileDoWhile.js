@@ -10,5 +10,4 @@ let rand = random(min, max)
 while(rand !== 25) {
     rand = random(min, max)
     console.log(rand);
-
 }
