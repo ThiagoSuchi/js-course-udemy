@@ -50,3 +50,7 @@ p button:hover {
     border: 1px solid var(--primary-color);
     color: var(--primary-color-white);
 }
+
+.pausado {
+    color: rgb(255, 68, 0);
+}
