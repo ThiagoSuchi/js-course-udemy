@@ -5,28 +5,41 @@ const btnPausar = document.querySelector(".pausar");
 const btnZerar = document.querySelector(".zerar");
 
 function zeroEsquerda(hours) {
-    return hours > 9 ? hours : `0${hours}`
+  return hours > 9 ? hours : `0${hours}`;
 }
 
-btnIniciar.addEventListener("click", () => {
-  let sec = 0;
-  setInterval(() => {
-    sec += 1;
-    
-    // Formatando hora-minuto-segundo em hh/mm/ss
-    let second = sec % 60;
-    let minute = Math.floor(sec / 60) % 60;
-    let hours = Math.floor(sec / 36000);
+let sec = 0;
+let time = null;
 
-    relogio.innerHTML = `${zeroEsquerda(hours)}:${zeroEsquerda(minute)}:${zeroEsquerda(second)}`;
-  }, 1000);
+btnIniciar.addEventListener("click", () => {
+  relogio.style.color = "white";
+
+  if (!time) {
+    time = setInterval(() => {
+      sec++;
+
+      // Formatando hora-minuto-segundo em hh/mm/ss
+      let second = sec % 60;
+      let minute = Math.floor(sec / 60) % 60;
+      let hours = Math.floor(sec / 3600);
+
+      relogio.innerHTML = `${zeroEsquerda(hours)}:${zeroEsquerda(
+        minute
+      )}:${zeroEsquerda(second)}`;
+    }, 1000);
+  }
 });
 
-
 btnPausar.addEventListener("click", () => {
-
+    relogio.style.color = "red";
+    clearInterval(time);
+    time = null;
 });
 
 btnZerar.addEventListener("click", () => {
-  console.log(btnZerar);
+    relogio.style.color = "white";
+    clearInterval(time)
+    time = null;
+    sec = 0;
+    relogio.innerHTML = "00:00:00";
 });
