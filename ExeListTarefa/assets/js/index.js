@@ -38,7 +38,7 @@ function criarTarefa(textoInput) {
     tarefas.appendChild(li);
     limpaInput();
     criaBotaoApagar(li);
-    salvarTarefa()
+    salvarTarefa();
 }
 
 // Verificando se o input tem algum valor
@@ -56,6 +56,7 @@ document.addEventListener('click', function(e) {
     }
 })
 
+// Salva o o valor do input no localStorage
 function salvarTarefa() {
     const liTarefa = tarefas.querySelectorAll('li')
     const listaDeTarefas = [];
@@ -70,6 +71,7 @@ function salvarTarefa() {
     localStorage.setItem('tarefas', tarefaJSON)
 }
 
+// Garante que o valor salvo no localStorage permaneça na li mesmo após recarregar a página
 function adicionaTarefasSalva() {
     const tarefas = localStorage.getItem('tarefas');
     const listDeTarefas = JSON.parse(tarefas)
