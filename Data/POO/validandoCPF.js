@@ -13,9 +13,9 @@ class ValidaCPF {
     }
 
     geraNovoCpf() {
-       const cpfSemDigitos = this.cpfLimpo.slice(0, -2);
-       const digito1 = ValidaCPF.geraDigito(cpfSemDigitos);
-       const digito2 = ValidaCPF.geraDigito(cpfSemDigitos + digito1);
+        const cpfSemDigitos = this.cpfLimpo.slice(0, -2);
+        const digito1 = ValidaCPF.geraDigito(cpfSemDigitos);
+        const digito2 = ValidaCPF.geraDigito(cpfSemDigitos + digito1);
         this.novoCPf = cpfSemDigitos + digito1 + digito2;
     }
 
@@ -23,7 +23,7 @@ class ValidaCPF {
         let total = 0;
         let reverso = cpfSemDigitos.length + 1;
 
-        for(let stringNumerica of cpfSemDigitos) {
+        for (let stringNumerica of cpfSemDigitos) {
             total += reverso * Number(stringNumerica);
             reverso--
         }
@@ -33,19 +33,19 @@ class ValidaCPF {
     }
 
     valida() {
-        if(!this.cpfLimpo) return false;
-        if(typeof this.cpfLimpo !== 'string') return false;
-        if(this.cpfLimpo.length !== 11) return false;
-        if(this.seForSequencia()) return false;
+        if (!this.cpfLimpo) return false;
+        if (typeof this.cpfLimpo !== 'string') return false;
+        if (this.cpfLimpo.length !== 11) return false;
+        if (this.seForSequencia()) return false;
         this.geraNovoCpf()
-         
+
         return this.novoCPf === this.cpfLimpo;
     }
 }
 
 const validaCpf = new ValidaCPF('070.987.720-03');
 
-if(validaCpf.valida()) {
+if (validaCpf.valida()) {
     console.log();
     console.log('CPF VÁLIDO.');
     console.log();

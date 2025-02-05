@@ -15,7 +15,7 @@ class validaFormulario {
         const camposValidos = this.camposValidos();
         const senhasValidas = this.senhasValidas()
 
-        if(camposValidos && senhasValidas) {
+        if (camposValidos && senhasValidas) {
             this.formulario.submit();
         }
     }
@@ -26,13 +26,13 @@ class validaFormulario {
         const senha = this.formulario.querySelector('.senha');
         const repetirSenha = this.formulario.querySelector('.repetir-senha');
 
-        if(senha.value !== repetirSenha.value) {
+        if (senha.value !== repetirSenha.value) {
             valid = false
             this.criarErro(senha, 'Campo repetir senha não está igual ao senha.')
             this.criarErro(repetirSenha, 'Campo repetir senha não está igual ao senha.')
         }
 
-        if(senha.value.length < 6 || senha.value.length > 12) {
+        if (senha.value.length < 6 || senha.value.length > 12) {
             valid = false
             this.criarErro(senha, 'Senha precisa estar enre 6 e 12 caracteres.')
         }
@@ -68,7 +68,7 @@ class validaFormulario {
     }
 
     validaCpf(campo) {
-        const cpf =new ValidaCPF(campo.value)
+        const cpf = new ValidaCPF(campo.value)
 
         if (!cpf.valida()) {
             this.criarErro(campo, 'Este CPF é inválido.');
