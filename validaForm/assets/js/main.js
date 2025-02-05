@@ -59,7 +59,21 @@ class validaFormulario {
             if (campo.classList.contains('usuario')) {
                 if (!this.validaUsuario(campo)) valid = false
             }
+
+            if (campo.classList.contains('cpf')) {
+                if (!this.validaCpf(campo)) valid = false
+            }
+
         }
+    }
+
+    validaCpf(campo) {
+        const cpf =new ValidaCPF(campo.value)
+
+        if (!cpf.valida()) {
+            this.criarErro(campo, 'Este CPF é inválido.');
+        }
+        return true
     }
 
     validaUsuario(campo) {
