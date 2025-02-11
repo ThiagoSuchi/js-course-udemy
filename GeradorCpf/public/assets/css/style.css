@@ -1,0 +1,28 @@
+:root {
+    --primary-color: rgb(209, 180, 125);
+    --primary-color-dark: rgb(82, 61, 24);
+    --primary-color-buttonClick: rgb(133, 122, 103);
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.container {
+    max-width: 40rem;
+    margin: 4rem auto;
+    background: rgb(82, 61, 24);
+    color: aliceblue;
+    padding: 2rem;
+    border-radius: 10px;
+}
