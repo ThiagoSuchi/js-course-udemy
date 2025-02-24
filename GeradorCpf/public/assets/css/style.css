@@ -1,7 +1,7 @@
 :root {
-    --primary-color: rgb(209, 180, 125);
-    --primary-color-dark: rgb(82, 61, 24);
-    --primary-color-buttonClick: rgb(133, 122, 103);
+    --primary-color: rgb(63, 63, 63);
+    --primary-color-dark: rgb(31, 31, 31);
+    --second-color: rgb(156, 156, 156);
 }
 
 * {
@@ -21,8 +21,28 @@ body {
 .container {
     max-width: 40rem;
     margin: 4rem auto;
-    background: rgb(82, 61, 24);
-    color: aliceblue;
+    background: var(--primary-color-dark);
+    color: var(--second-color);
     padding: 2rem;
     border-radius: 10px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cpf-gerado {
+    font-size: 2em;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+
+.borda {
+    border: 1px dashed white;
+    border-radius: 10px;
+    padding: 2rem;
 }
