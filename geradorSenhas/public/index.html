@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modelo</title>
+</head>
+<body>
+    
+    <section class="container">
+        <div class="borda">
+            <h1>Gerador de Senhas</h1>
+            <div class="cpf-gerado">
+                <label for="length">Quantdade de caracteres
+                    <input type="number" id="length" min="4" max="20">
+                </label>
+                <div class="checkbox-container">
+                    <label for="numbers"> Adicionar números </label>
+                    <input type="checkbox" id="numbers" checked> 
+                </div>
+                <div class="checkbox-container">
+                    <label for="maiusculas"> Letras maiúsculas </label>
+                    <input type="checkbox" id="uppercase" checked> 
+                </div>
+                <div class="checkbox-container">
+                    <label for="minusculas"> Letras minúsculas </label>
+                    <input type="checkbox" id="lowercase" checked>
+                </div>
+                <div class="checkbox-container">
+                    <label> Letras símbolos </label>
+                    <input type="checkbox" id="symbols" checked> 
+                </div>
+            </div>
+            <button class="btn-gerar">GERAR SENHA</button>
+        </div>
+    </section>
+
+    <script type="module" src="../src/main.js"></script>
+</body>
+</html>
