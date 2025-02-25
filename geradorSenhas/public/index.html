@@ -11,25 +11,26 @@
     <section class="container">
         <div class="borda">
             <h1>Gerador de Senhas</h1>
+            <div class="senha-gerada">---------------------</div>
             <div class="cpf-gerado">
-                <label for="length">Quantdade de caracteres
-                    <input type="number" id="length" min="4" max="20">
+                <label for="length">Quantidade de caracteres
+                    <input type="number" id="length" min="4" max="12">
                 </label>
-                <div class="checkbox-container">
+                <div>
                     <label for="numbers"> Adicionar números </label>
-                    <input type="checkbox" id="numbers" checked> 
+                    <input type="checkbox" id="numbers"> 
                 </div>
-                <div class="checkbox-container">
+                <div>
                     <label for="maiusculas"> Letras maiúsculas </label>
-                    <input type="checkbox" id="uppercase" checked> 
+                    <input type="checkbox" id="uppercase"> 
                 </div>
-                <div class="checkbox-container">
+                <div>
                     <label for="minusculas"> Letras minúsculas </label>
-                    <input type="checkbox" id="lowercase" checked>
+                    <input type="checkbox" id="lowercase">
                 </div>
-                <div class="checkbox-container">
+                <div>
                     <label> Letras símbolos </label>
-                    <input type="checkbox" id="symbols" checked> 
+                    <input type="checkbox" id="symbols"> 
                 </div>
             </div>
             <button class="btn-gerar">GERAR SENHA</button>

@@ -84,3 +84,17 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-gerar:hover {
    background: var(--color-button-hover);
 }
+
+.senha-gerada {
+    width: 50%;
+    display: flex;
+    padding: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0 25% 2rem;
+    border-radius: 8px;
+    justify-content: center;
+    background: var(--primary-color);
+    color: var(--primary-color-dark);
+    border: 6px double var(--primary-color-dark);
+}
