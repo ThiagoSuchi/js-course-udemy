@@ -21,6 +21,6 @@ export function geraSenha(qtd, maiuscula, minuscula, numeros, simbolos) {
         simbolos && senhaArray.push(geraSimbulo());
     }
 
-    // join('') remove 
+    // join('') faz a união dos elementos dentro array sem nenhum separador, e o slice(0, qtd) limita a quantidade de elementos que poderão retornar
     return senhaArray.join('').slice(0, qtd)
 }
